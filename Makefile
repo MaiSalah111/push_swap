@@ -1,0 +1,84 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/02/19 16:32:42 by maiahmed          #+#    #+#              #
+#    Updated: 2024/02/20 18:53:58 by maiahmed         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME := push_swap
+NAME_BONUS := checker
+
+
+SRCS := 	push_swap.c \
+			errors.c	\
+			init_a_to_b.c \
+			init_b_to_a.c \
+			push_commands.c \
+			push_swap.c \
+			rev_rotate_commands.c \
+			rotate_commands.c \
+			sort_stack.c \
+			sort_three.c \
+			split.c \
+			stack_init.c \
+			stack_utils.c \
+			swap_commands.c \
+			get_next_line.c \
+			get_next_line_utils.c \
+
+SRCSB := checker.c \
+			checker_utils.c \
+
+
+OBJS := $(SRCS:.c=.o)
+OBJSB := $(SRCSB:.c=.o)
+
+CC := cc
+CFLAGS := -Wall -Wextra -Werror
+RM := rm -f
+
+LIBFT := libft/libft.a
+PRINTF := ft_printf/libftprintf.a
+
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+
+$(LIBFT):
+	make -C libft
+
+$(PRINTF):
+	make -C ft_printf
+	
+
+all: $(NAME)
+
+$(NAME): $(OBJS) $(LIBFT) $(PRINTF)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(PRINTF) 
+	
+        
+bonus: $(NAME_BONUS)
+
+$(NAME_BONUS): $(OBJSB) $(LIBFT) $(PRINTF)
+	$(CC) $(CFLAGS) -o $(NAME_BONUS) $(OBJSB) $(LIBFT) $(PRINTF) 
+
+	
+	
+clean:
+	make -C libft clean
+	make -C ft_printf clean
+	$(RM) $(OBJS) $(OBJSB)	
+
+fclean: clean
+	make -C libft fclean
+	make -C ft_printf fclean
+	$(RM) $(NAME) $(NAME_BONUS)
+
+	
+re: fclean all
+
+.PHONY: all clean fclean re bonus
