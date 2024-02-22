@@ -6,13 +6,23 @@
 /*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 14:36:10 by maiahmed          #+#    #+#             */
-/*   Updated: 2024/02/17 17:01:10 by maiahmed         ###   ########.fr       */
+/*   Updated: 2024/02/22 21:13:06 by maiahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	count_words(char *s, char c)
+void	ft_undoalloc(char **s, int i)
+{
+	while (i >= 0)
+	{
+		free(s[i]);
+		i--;
+	}
+	free(s);
+}
+
+int	count_words(char *s, char c)
 {
 	int		count;
 	bool	inside_word;
@@ -51,21 +61,11 @@ static char	*get_next_word(char *s, char c)
 		++len;
 	next_word = malloc((size_t)len * sizeof(char) + 1);
 	if (!next_word)
-		return (NULL);
+		return (free(next_word), NULL);
 	while ((s[cursor] != c) && s[cursor])
 		next_word[i++] = s[cursor++];
 	next_word[i] = '\0';
 	return (next_word);
-}
-
-static void	ft_undoalloc(char **s, int i)
-{
-	while (i >= 0)
-	{
-		free(s[i]);
-		i--;
-	}
-	free(s);
 }
 
 char	**split(char *s, char c)
@@ -95,16 +95,4 @@ char	**split(char *s, char c)
 	}
 	result_array[i] = NULL;
 	return (result_array);
-}
-
-int	ft_isdigit(int c)
-{
-	if (c > 47 && c < 58)
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
 }

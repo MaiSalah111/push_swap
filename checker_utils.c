@@ -6,80 +6,54 @@
 /*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 15:38:36 by maiahmed          #+#    #+#             */
-/*   Updated: 2024/02/20 18:58:15 by maiahmed         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:12:56 by maiahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	apply_commands(char *line, t_stack **a, t_stack **b)
+void	checker_error(t_stack **a, t_stack **b)
 {
-	if (!ft_strcmp(line, "sa") || !ft_strcmp(line, "sb")
-		|| !ft_strcmp(line, "ss"))
-		handle_swap_commands(line, a, b);
-	else if (!ft_strcmp(line, "pa") || !ft_strcmp(line, "pb"))
-		handle_push_commands(line, a, b);
-	else if (!ft_strcmp(line, "ra") || !ft_strcmp(line, "rb")
-		|| !ft_strcmp(line, "rr") || !ft_strcmp(line, "rra")
-			|| !ft_strcmp(line, "rrb") || !ft_strcmp(line, "rrr"))
-		handle_rotate_commands(line, a, b);
-	return (1);
+	free_stack(a);
+	free_stack(b);
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
-void	handle_swap_commands(char *line, t_stack **a, t_stack **b)
+int	ft_strcmp(char *str1, char *str2)
 {
-	if (!ft_strcmp(line, "sa"))
-		swap(a);
-	else if (!ft_strcmp(line, "sb"))
-		swap(b);
-	else if (!ft_strcmp(line, "ss"))
+	while (*str1 && *str1 == *str2)
 	{
-		swap(a);
-		swap(b);
+		++str1;
+		++str2;
 	}
+	return (*str1 - *str2);
 }
 
-void	handle_push_commands(char *line, t_stack **a, t_stack **b)
+void	apply_command(t_stack **a, t_stack **b, char *command)
 {
-	if (!ft_strcmp(line, "pa"))
-		push(a, b);
-	else if (!ft_strcmp(line, "pb"))
-		push(b, a);
-}
-
-void	handle_rotate_commands(char *line, t_stack **a, t_stack **b)
-{
-	if (!ft_strcmp(line, "ra") || !ft_strcmp(line, "rr"))
-		rotate(a);
-	if (!ft_strcmp(line, "rb") || !ft_strcmp(line, "rr"))
-		rotate(b);
-	if (!ft_strcmp(line, "rra") || !ft_strcmp(line, "rrr"))
-		rev_rotate(a);
-	if (!ft_strcmp(line, "rrb") || !ft_strcmp(line, "rrr"))
-		rev_rotate(b);
-}
-
-void	checker_inistack(t_stack **stack, int argc, char **argv)
-{
-	t_stack	*new;
-	char	**args;
-	int		i;
-
-	i = 0;
-	if (argc == 2)
-		args = split(argv[1], ' ');
+	if (!ft_strcmp(command, "pa\n"))
+		pa(a, b, true);
+	else if (!ft_strcmp(command, "pb\n"))
+		pb(b, a, true);
+	else if (!ft_strcmp(command, "sa\n"))
+		sa(a, true);
+	else if (!ft_strcmp(command, "sb\n"))
+		sb(b, true);
+	else if (!ft_strcmp(command, "ss\n"))
+		ss(a, b, true);
+	else if (!ft_strcmp(command, "ra\n"))
+		ra(a, true);
+	else if (!ft_strcmp(command, "rb\n"))
+		rb(b, true);
+	else if (!ft_strcmp(command, "rr\n"))
+		rr(a, b, true);
+	else if (!ft_strcmp(command, "rra\n"))
+		rra(a, true);
+	else if (!ft_strcmp(command, "rrb\n"))
+		rrb(b, true);
+	else if (!ft_strcmp(command, "rrr\n"))
+		rrr(a, b, true);
 	else
-	{
-		i = 1;
-		args = argv;
-	}
-	while (args[i])
-	{
-		new = ft_lstnew(ft_atoi(args[i]));
-		ft_lstadd_back(stack, new);
-		i++;
-	}
-	current_index(stack);
-	if (argc == 2)
-		free_stack(args);
+		checker_error(a, b);
 }

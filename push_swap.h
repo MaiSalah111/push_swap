@@ -6,7 +6,7 @@
 /*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 14:35:21 by maiahmed          #+#    #+#             */
-/*   Updated: 2024/02/20 15:51:12 by maiahmed         ###   ########.fr       */
+/*   Updated: 2024/02/22 20:34:07 by maiahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,11 @@ void			put_digit(long long int num, int base, int *len);
 int				ft_printf(const char *format, ...);
 
 //***Checker
-int				apply_commands(char *line, t_stack **a, t_stack **b);
+void			checker_error(t_stack **a, t_stack **b);
+int				ft_strcmp(char *str_1, char *str_2);
+void			apply_command(t_stack **a, t_stack **b, char *command);
 void			handle_swap_commands(char *line, t_stack **a, t_stack **b);
 void			handle_push_commands(char *line, t_stack **a, t_stack **b);
 void			handle_rotate_commands(char *line, t_stack **a, t_stack **b);
-void			checker_inistack(t_stack **stack, int argc, char **argv);
 
 #endif

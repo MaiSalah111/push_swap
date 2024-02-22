@@ -6,7 +6,7 @@
 #    By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/19 16:32:42 by maiahmed          #+#    #+#              #
-#    Updated: 2024/02/20 18:53:58 by maiahmed         ###   ########.fr        #
+#    Updated: 2024/02/22 21:20:56 by maiahmed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,21 @@ SRCS := 	push_swap.c \
 			init_a_to_b.c \
 			init_b_to_a.c \
 			push_commands.c \
-			push_swap.c \
+			rev_rotate_commands.c \
+			rotate_commands.c \
+			sort_stack.c \
+			sort_three.c \
+			split.c \
+			stack_init.c \
+			stack_utils.c \
+			swap_commands.c \
+
+SRCSB := checker.c \
+			checker_utils.c \
+			errors.c	\
+			init_a_to_b.c \
+			init_b_to_a.c \
+			push_commands.c \
 			rev_rotate_commands.c \
 			rotate_commands.c \
 			sort_stack.c \
@@ -30,9 +44,6 @@ SRCS := 	push_swap.c \
 			swap_commands.c \
 			get_next_line.c \
 			get_next_line_utils.c \
-
-SRCSB := checker.c \
-			checker_utils.c \
 
 
 OBJS := $(SRCS:.c=.o)
@@ -69,13 +80,13 @@ $(NAME_BONUS): $(OBJSB) $(LIBFT) $(PRINTF)
 	
 	
 clean:
-	make -C libft clean
-	make -C ft_printf clean
-	$(RM) $(OBJS) $(OBJSB)	
+	make clean -C libft
+	make clean -C ft_printf
+	$(RM) $(OBJS) $(OBJSB)
 
 fclean: clean
-	make -C libft fclean
-	make -C ft_printf fclean
+	make fclean -C libft
+	make fclean -C ft_printf
 	$(RM) $(NAME) $(NAME_BONUS)
 
 	

@@ -6,7 +6,7 @@
 /*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 14:35:07 by maiahmed          #+#    #+#             */
-/*   Updated: 2024/02/19 14:22:47 by maiahmed         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:09:23 by maiahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	swap(t_stack **head)
 {
 	if (!*head || !(*head)->next)
 		return ;
-	*head = (*head)->next; //HEAD = 7
+	*head = (*head)->next;
 	(*head)->prev->prev = *head;
 	(*head)->prev->next = (*head)->next;
 	if ((*head)->next)

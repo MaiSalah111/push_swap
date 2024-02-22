@@ -6,24 +6,24 @@
 /*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 14:35:59 by maiahmed          #+#    #+#             */
-/*   Updated: 2024/02/16 15:50:46 by maiahmed         ###   ########.fr       */
+/*   Updated: 2024/02/22 20:41:51 by maiahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	main(int ac, char **av)
 {
 	t_stack	*a;
 	t_stack	*b;
 
 	a = NULL;
 	b = NULL;
-	if (argc == 1 || (argc == 2 && !argv[1][0]))
+	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (1);
-	else if (argc == 2)
-		argv = split(argv[1], ' ');
-	init_stack_a(&a, argv + 1);
+	else if (ac == 2)
+		av = split(av[1], ' ');
+	init_stack_a(&a, av + 1);
 	if (!stack_sorted(a))
 	{
 		if (stack_len(a) == 2)
@@ -34,5 +34,6 @@ int	main(int argc, char **argv)
 			sort_stacks(&a, &b);
 	}
 	free_stack(&a);
+	free_stack(&b);
 	return (0);
 }
