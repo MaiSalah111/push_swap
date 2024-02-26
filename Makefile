@@ -6,7 +6,7 @@
 #    By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/19 16:32:42 by maiahmed          #+#    #+#              #
-#    Updated: 2024/02/26 19:04:19 by maiahmed         ###   ########.fr        #
+#    Updated: 2024/02/26 19:05:38 by maiahmed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,14 +53,14 @@ CC := cc
 CFLAGS := -Wall -Wextra -Werror
 RM := rm -f
 
-LIBFT := LIBFT/LIBFT.a
-PRINTF := ft_printf/LIBFTprintf.a
+LIBFT := libft/libft.a
+PRINTF := ft_printf/libftprintf.a
 
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 $(LIBFT):
-	make -C LIBFT
+	make -C libft
 
 $(PRINTF):
 	make -C ft_printf
@@ -80,12 +80,12 @@ $(NAME_BONUS): $(OBJSB) $(LIBFT) $(PRINTF)
 	
 	
 clean:
-	make clean -C LIBFT
+	make clean -C libft
 	make clean -C ft_printf
 	$(RM) $(OBJS) $(OBJSB)
 
 fclean: clean
-	make fclean -C LIBFT
+	make fclean -C libft
 	make fclean -C ft_printf
 	$(RM) $(NAME) $(NAME_BONUS)
 
