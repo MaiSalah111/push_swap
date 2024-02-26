@@ -6,7 +6,7 @@
 #    By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/19 16:32:42 by maiahmed          #+#    #+#              #
-#    Updated: 2024/02/26 19:08:11 by maiahmed         ###   ########.fr        #
+#    Updated: 2024/02/26 19:08:52 by maiahmed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,14 +53,14 @@ CC := cc
 CFLAGS := -Wall -Wextra -Werror
 RM := rm -f
 
-# LIBFT := libft/libft.a
+LIBFT := libft/libft.a
 PRINTF := ft_printf/libftprintf.a
 
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-# :
-# 	make -C libft
+$(LIBFT):
+	make -C libft
 
 $(PRINTF):
 	make -C ft_printf
@@ -68,24 +68,24 @@ $(PRINTF):
 
 all: $(NAME)
 
-$(NAME): $(OBJS)  $(PRINTF)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)  $(PRINTF) 
+$(NAME): $(OBJS) $(LIBFT) $(PRINTF)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(PRINTF) 
 	
         
 bonus: $(NAME_BONUS)
 
-$(NAME_BONUS): $(OBJSB)  $(PRINTF)
-	$(CC) $(CFLAGS) -o $(NAME_BONUS) $(OBJSB)  $(PRINTF) 
+$(NAME_BONUS): $(OBJSB) $(LIBFT) $(PRINTF)
+	$(CC) $(CFLAGS) -o $(NAME_BONUS) $(OBJSB) $(LIBFT) $(PRINTF) 
 
 	
 	
 clean:
-	
+	make clean -C libft
 	make clean -C ft_printf
 	$(RM) $(OBJS) $(OBJSB)
 
 fclean: clean
-	
+	make fclean -C libft
 	make fclean -C ft_printf
 	$(RM) $(NAME) $(NAME_BONUS)
 
