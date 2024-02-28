@@ -30,7 +30,10 @@ int	error_syntax(char *str_n)
 int	error_duplicate(t_stack *a, int n)
 {
 	if (!a)
+	{
+		free(a);
 		return (0);
+	}
 	while (a)
 	{
 		if (a->nbr == n)
@@ -40,27 +43,53 @@ int	error_duplicate(t_stack *a, int n)
 	return (0);
 }
 
-void	free_stack(t_stack **stack)
-{
-	t_stack	*tmp;
-	t_stack	*current;
 
-	if (!stack)
-		return ;
-	current = *stack;
-	while (current)
+void free_stack(t_stack **stack)
+{
+	t_stack *tmp;
+	tmp = NULL;
+	if (*stack && stack)
 	{
-		tmp = current->next;
-		current->nbr = 0;
-		free(current);
-		current = tmp;
+		while (*stack)
+		{
+			tmp = (*stack)->next;
+			free(*stack);
+			*stack = NULL;
+			*stack = tmp;
+		}
 	}
-	*stack = NULL;
 }
+// void	free_stack(t_stack **stack)
+// {
+// 	t_stack	*tmp;
+// 	t_stack	*current;
 
-void	free_errors(t_stack **a)
+// 	if (!stack)
+// 		return ;
+// 	current = *stack;
+// 	while (current)
+// 	{
+// 		tmp = current->next;
+// 		current->nbr = NULL;
+// 		free(current);
+// 		current = tmp;
+// 	}
+// 	*stack = NULL;
+// }
+
+// void	free_errors(t_stack **a)
+// {
+// 	free_stack(a);
+// 	ft_printf("Error\n");
+// 	exit(1);
+// }
+
+void	free_errors(t_stack **a, t_stack **b)
 {
-	free_stack(a);
-	ft_printf("Error\n");
-	exit(1);
+	ft_putendl_fd("Error", 2);
+	if(a && *a)
+		free_stack(a);
+	if (b && *b)
+		free_stack(b);
+	exit(EXIT_FAILURE);
 }

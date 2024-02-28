@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <unistd.h>
+// # include ./libft/libft.h
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 7
@@ -48,11 +49,15 @@ typedef struct s_stack
 int				error_syntax(char *str_n);
 int				error_duplicate(t_stack *a, int n);
 void			free_stack(t_stack **stack);
-void			free_errors(t_stack **a);
+// void			free_errors(t_stack **a);
+void			free_errors(t_stack **a, t_stack **b);
+void			ft_putendl_fd(char *s, int fd);
 
 //***Stack initiation
-void			init_stack_a(t_stack **a, char **argv);
-char			**split(char *s, char c);
+// void			init_stack_a(t_stack **a, char **argv);
+void			init_stack_a(t_stack **a, char *arg);
+char			**split(char const *s, char c);
+// char			**split(char *str, char delimiter);
 int				ft_isdigit(int c);
 
 //***Nodes initiation
