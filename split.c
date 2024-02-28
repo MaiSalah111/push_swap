@@ -39,7 +39,7 @@ static int	count_words(char const *s, char c)
     return (count);
 }
 
-static const char	*skip_delimiters(const char *s, char c)
+static char	*skip_delimiters(char *s, char c)
 {
     while (*s && *s == c)
     {
@@ -77,11 +77,12 @@ void	ft_undoalloc(char **s, int i)
     free(s);
 }
 
-char	**split(char const *s, char c)
+char	**split(char *s, char c)
 {
     char			**split;
     int				count;
     int				i;
+
 
     i = 0;
     if (!s)

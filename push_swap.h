@@ -20,6 +20,10 @@
 # include <unistd.h>
 // # include ./libft/libft.h
 
+# ifndef ERROR
+#define ERROR -1
+# endif
+
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 7
 # endif
@@ -55,8 +59,8 @@ void			ft_putendl_fd(char *s, int fd);
 
 //***Stack initiation
 // void			init_stack_a(t_stack **a, char **argv);
-void			init_stack_a(t_stack **a, char *arg);
-char			**split(char const *s, char c);
+int			init_stack_a(t_stack **a, char *arg);
+char			**split(char *s, char c);
 // char			**split(char *str, char delimiter);
 int				ft_isdigit(int c);
 

@@ -59,7 +59,7 @@ static void	append_node(t_stack **stack, int n)
 	// free(node); // Add this line to free the node
 }
 
-void init_stack_a(t_stack **a, char *arg)
+int init_stack_a(t_stack **a, char *arg)
 {
 	long n;
 
@@ -71,8 +71,10 @@ void init_stack_a(t_stack **a, char *arg)
 	if (error_duplicate(*a, (int)n))
 		free_errors(a, NULL);
 	append_node(a, (int)n);
-	// free(*a); // Add this line to free the stack
+	return (0);
+	 // Add this line to free the stack
 }
+
 
 // void	init_stack_a(t_stack **a, char **argv)
 // {
