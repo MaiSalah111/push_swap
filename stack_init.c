@@ -12,6 +12,17 @@
 
 #include "push_swap.h"
 
+void free_split_array(char **split_array)
+{
+    int i = 0;
+    while (split_array[i] != NULL)
+    {
+        free(split_array[i]);
+        i++;
+    }
+    free(split_array);
+}
+
 static long	ft_atol(const char *s)
 {
 	long	result;
@@ -56,45 +67,40 @@ static void	append_node(t_stack **stack, int n)
 		last_node->next = node;
 		node->prev = last_node;
 	}
-	// free(node); // Add this line to free the node
 }
 
-int init_stack_a(t_stack **a, char *arg)
+int init_stack_a(t_stack **a, char **split_av)
 {
-	long n;
+	int i = 0;
+	while (split_av[i] != NULL)
+	{
+		long n;
+		char *arg = split_av[i];
 
-	if (error_syntax(arg))
-		free_errors(a, NULL);
-	n = ft_atol(arg);
-	if (n > INT_MAX || n < INT_MIN)
-		free_errors(a, NULL);
-	if (error_duplicate(*a, (int)n))
-		free_errors(a, NULL);
-	append_node(a, (int)n);
+		if (error_syntax(arg))
+		{
+			free_split_array(split_av);
+			free_errors(a, NULL);
+			return -1;
+		}
+		n = ft_atol(arg);
+		if (n > INT_MAX || n < INT_MIN)
+		{
+			free_split_array(split_av);
+			free_errors(a, NULL);
+			return -1;
+		}
+		if (error_duplicate(*a, (int)n))
+		{
+			free_split_array(split_av);
+			free_errors(a, NULL);
+			return -1;
+		}
+		append_node(a, (int)n);
+		i++;
+	}
 	return (0);
-	 // Add this line to free the stack
 }
-
-
-// void	init_stack_a(t_stack **a, char **argv)
-// {
-// 	long	n;
-// 	int		i;
-
-// 	i = 0;
-// 	while (argv[i])
-// 	{
-// 		if (error_syntax(argv[i]))
-// 			free_errors(a);
-// 		n = ft_atol(argv[i]);
-// 		if (n > INT_MAX || n < INT_MIN)
-// 			free_errors(a);
-// 		if (error_duplicate(*a, (int)n))
-// 			free_errors(a);
-// 		append_node(a, (int)n);
-// 		i++;
-// 	}
-// }
 
 t_stack	*get_cheapest(t_stack *stack)
 {

@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <unistd.h>
-// # include ./libft/libft.h
+#include "libft/libft.h"
 
 # ifndef ERROR
 #define ERROR -1
@@ -59,8 +59,10 @@ void			ft_putendl_fd(char *s, int fd);
 
 //***Stack initiation
 // void			init_stack_a(t_stack **a, char **argv);
-int			init_stack_a(t_stack **a, char *arg);
+// int				init_stack_a(t_stack **a, char *arg);
+int 			init_stack_a(t_stack **a, char **split_av);
 char			**split(char *s, char c);
+void			free_split_array(char **split_array);
 // char			**split(char *str, char delimiter);
 int				ft_isdigit(int c);
 
