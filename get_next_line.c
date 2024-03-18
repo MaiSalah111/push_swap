@@ -40,10 +40,10 @@ char	*read_from_fd(int fd, char *accumulated_str)
 	return (accumulated_str);
 }
 
-char	*extract_line_from_str(char *str)
+char *extract_line_from_str(char *str)
 {
-	int		i;
-	char	*line;
+	int i;
+	char *line;
 
 	i = 0;
 	if (!str || !str[i])
@@ -52,7 +52,7 @@ char	*extract_line_from_str(char *str)
 		i++;
 	line = (char *)malloc(sizeof(char) * (i + 2));
 	if (!line)
-		return (free(line), NULL);
+		return (free(str), NULL);
 	i = 0;
 	while (str[i] && str[i] != '\n')
 	{
@@ -91,6 +91,7 @@ char	*skip_to_next_line(char *current_str)
 	return (next_str);
 }
 
+
 char	*get_next_line(int fd, char	*line)
 {
 	static char	*buffer;
@@ -101,6 +102,7 @@ char	*get_next_line(int fd, char	*line)
 	if (!buffer)
 	{
 		free(buffer);
+		buffer = NULL;
 		return (NULL);
 	}
 	line = extract_line_from_str(buffer);
