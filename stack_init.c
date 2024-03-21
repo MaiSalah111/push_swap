@@ -55,6 +55,7 @@ static void	append_node(t_stack **stack, int n)
 	if (!node)
 		return ;
 	node->next = NULL;
+	node->cheapest = 0; // Initialize cheapest
 	node->nbr = n;
 	if (!(*stack))
 	{

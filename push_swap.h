@@ -116,4 +116,8 @@ void			handle_swap_commands(char *line, t_stack **a, t_stack **b);
 void			handle_push_commands(char *line, t_stack **a, t_stack **b);
 void			handle_rotate_commands(char *line, t_stack **a, t_stack **b);
 
+void			process_input(int ac, char **av, t_stack **a);
+void			process_commands(t_stack **a, t_stack **b);
+void 			print_result(t_stack *a);
+
 #endif
