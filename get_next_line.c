@@ -77,7 +77,7 @@ char	*skip_to_next_line(char *current_str)
 	i = 0;
 	while (current_str[i] != '\0' && current_str[i] != '\n')
 		i++;
-	if (current_str[i] == '\0')
+	if (current_str[i] == '\0'|| (current_str[i] == '\n' && current_str[i + 1] == '\0'))
 		return (free(current_str), NULL);
 	next_str = (char *)malloc(sizeof(char) * ((lenstr(current_str) - i) + 1));
 	if (!next_str)

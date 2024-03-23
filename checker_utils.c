@@ -55,5 +55,8 @@ void	apply_command(t_stack **a, t_stack **b, char *command)
 	else if (!ft_strcmp(command, "rrr\n"))
 		rrr(a, b, true);
 	else
+	{
+		free(command);
 		checker_error(a, b);
+	}	
 }
