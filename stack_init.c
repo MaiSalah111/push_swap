@@ -6,7 +6,7 @@
 /*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:09:42 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/03/23 17:07:31 by maiahmed         ###   ########.fr       */
+/*   Updated: 2024/03/23 17:41:50 by maiahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,42 +70,8 @@ static void	append_node(t_stack **stack, int n)
 		last_node->next = node;
 		node->prev = last_node;
 	}
+	free_stack(stack);
 }
-
-// int	init_stack_a(t_stack **a, char **split_av)
-// {
-// 	int		i;
-// 	long	n;
-// 	char	*arg;
-
-// 	i = 0;
-// 	while (split_av[i] != NULL)
-// 	{
-// 		arg = split_av[i];
-// 		if (error_syntax(arg))
-// 		{
-// 			free_split_array(split_av);
-// 			free_errors(a, NULL);
-// 			return (-1);
-// 		}
-// 		n = ft_atol(arg);
-// 		if (n > INT_MAX || n < INT_MIN)
-// 		{
-// 			free_split_array(split_av);
-// 			free_errors(a, NULL);
-// 			return (-1);
-// 		}
-// 		if (error_duplicate(*a, (int)n))
-// 		{
-// 			free_split_array(split_av);
-// 			free_errors(a, NULL);
-// 			return (-1);
-// 		}
-// 		append_node(a, (int)n);
-// 		i++;
-// 	}
-// 	return (0);
-// }
 
 int	init_stack_a(t_stack **a, char **split_av)
 {
