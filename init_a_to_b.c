@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_a_to_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 14:35:49 by maiahmed          #+#    #+#             */
-/*   Updated: 2024/02/16 15:49:24 by maiahmed         ###   ########.fr       */
+/*   Created: 2024/03/04 11:08:21 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/03/08 11:55:57 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ static void	cost_analysis_a(t_stack *a, t_stack *b)
 
 void	set_cheapest(t_stack *stack)
 {
-	long			cheapest_value;
-	t_stack			*cheapest_node;
+	long	cheapest_value;
+	t_stack	*cheapest_node;
 
 	if (!stack)
 		return ;

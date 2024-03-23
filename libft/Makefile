@@ -3,12 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+         #
+#    By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/15 11:29:48 by maiahmed          #+#    #+#              #
-#    Updated: 2023/11/15 11:29:48 by maiahmed         ###   ########.fr        #
+#    Created: 2024/03/04 11:07:33 by mualkhid          #+#    #+#              #
+#    Updated: 2024/03/04 11:07:33 by mualkhid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
 
 NAME = libft.a
 
@@ -56,7 +58,7 @@ SRCSB = ft_lstnew.c \
 		ft_lstdelone.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
-  
+
 OBJS = $(SRCS:.c=.o)
 
 OBJSB = $(SRCSB:.c=.o)

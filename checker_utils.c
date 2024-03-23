@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   checker_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 15:38:36 by maiahmed          #+#    #+#             */
-/*   Updated: 2024/02/21 15:12:56 by maiahmed         ###   ########.fr       */
+/*   Created: 2024/03/04 11:07:45 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/03/23 15:24:17 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	checker_error(t_stack **a, t_stack **b)
+void	checker_error(t_stack **a, t_stack **b, char *command)
 {
+	free(command);
 	free_stack(a);
 	free_stack(b);
 	write(2, "Error\n", 6);
@@ -55,8 +56,5 @@ void	apply_command(t_stack **a, t_stack **b, char *command)
 	else if (!ft_strcmp(command, "rrr\n"))
 		rrr(a, b, true);
 	else
-	{
-		free(command);
-		checker_error(a, b);
-	}	
+		checker_error(a, b, command);
 }

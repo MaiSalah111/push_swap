@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 16:12:54 by maiahmed          #+#    #+#             */
-/*   Updated: 2023/12/05 11:07:15 by maiahmed         ###   ########.fr       */
+/*   Created: 2024/03/04 11:02:08 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/03/04 11:02:09 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stdarg.h>
 # include <stddef.h>
-# include <unistd.h>
 # include <stdio.h>
+# include <unistd.h>
 
 void	ft_ch(char c, int *len);
 void	ft_str(char *s, int *len);

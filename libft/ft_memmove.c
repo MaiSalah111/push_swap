@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 10:51:04 by maiahmed          #+#    #+#             */
-/*   Updated: 2023/11/20 15:15:42 by maiahmed         ###   ########.fr       */
+/*   Created: 2024/03/04 11:05:12 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/03/04 11:05:13 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t			i;
+	size_t	i;
 
 	if (!(unsigned char *)dst && !(unsigned char *)src)
 		return (NULL);

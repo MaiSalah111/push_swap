@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 14:36:28 by maiahmed          #+#    #+#             */
-/*   Updated: 2024/02/16 15:55:25 by maiahmed         ###   ########.fr       */
+/*   Created: 2024/03/04 11:09:48 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/03/08 12:00:12 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ bool	stack_sorted(t_stack *stack)
 
 t_stack	*find_min(t_stack *stack)
 {
-	long			min;
-	t_stack			*min_node;
+	long	min;
+	t_stack	*min_node;
 
 	if (!stack)
 		return (NULL);
@@ -71,8 +71,8 @@ t_stack	*find_min(t_stack *stack)
 
 t_stack	*find_max(t_stack *stack)
 {
-	long			max;
-	t_stack			*max_node;
+	long	max;
+	t_stack	*max_node;
 
 	if (!stack)
 		return (NULL);

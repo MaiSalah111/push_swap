@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   swap_commands.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 14:35:07 by maiahmed          #+#    #+#             */
-/*   Updated: 2024/02/21 15:09:23 by maiahmed         ###   ########.fr       */
+/*   Created: 2024/03/04 11:09:54 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/03/08 12:01:17 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	swap(t_stack **head)
+void	swap(t_stack **head)
 {
 	if (!*head || !(*head)->next)
 		return ;

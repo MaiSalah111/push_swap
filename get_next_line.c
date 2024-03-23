@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/30 16:28:33 by maiahmed          #+#    #+#             */
-/*   Updated: 2024/02/26 17:23:45 by maiahmed         ###   ########.fr       */
+/*   Created: 2024/03/04 11:08:11 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/03/23 13:43:28 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*read_from_fd(int fd, char *accumulated_str)
 	char	*buffer;
 	int		read_length;
 
-	buffer = malloc((size_t) BUFFER_SIZE + 2 * sizeof(char));
+	buffer = malloc((size_t)BUFFER_SIZE + 2 * sizeof(char));
 	if (!buffer)
 	{
 		free(buffer);
@@ -40,10 +40,10 @@ char	*read_from_fd(int fd, char *accumulated_str)
 	return (accumulated_str);
 }
 
-char *extract_line_from_str(char *str)
+char	*extract_line_from_str(char *str)
 {
-	int i;
-	char *line;
+	int		i;
+	char	*line;
 
 	i = 0;
 	if (!str || !str[i])
@@ -77,7 +77,7 @@ char	*skip_to_next_line(char *current_str)
 	i = 0;
 	while (current_str[i] != '\0' && current_str[i] != '\n')
 		i++;
-	if (current_str[i] == '\0'|| (current_str[i] == '\n' && current_str[i + 1] == '\0'))
+	if (current_str[i] == '\0' || (current_str[i] && !current_str[i + 1]))
 		return (free(current_str), NULL);
 	next_str = (char *)malloc(sizeof(char) * ((lenstr(current_str) - i) + 1));
 	if (!next_str)
@@ -91,8 +91,7 @@ char	*skip_to_next_line(char *current_str)
 	return (next_str);
 }
 
-
-char	*get_next_line(int fd, char	*line)
+char	*get_next_line(int fd, char *line)
 {
 	static char	*buffer;
 

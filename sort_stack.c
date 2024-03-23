@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 14:34:57 by maiahmed          #+#    #+#             */
-/*   Updated: 2024/02/16 15:54:02 by maiahmed         ###   ########.fr       */
+/*   Created: 2024/03/04 11:09:27 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/03/23 13:42:47 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,17 @@ void	sort_stacks(t_stack **a, t_stack **b)
 	}
 	current_index(*a);
 	min_on_top(a);
+}
+
+t_stack	*get_cheapest(t_stack *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->cheapest)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
 }

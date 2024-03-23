@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/30 16:28:24 by maiahmed          #+#    #+#             */
-/*   Updated: 2024/02/19 20:31:52 by maiahmed         ###   ########.fr       */
+/*   Created: 2024/03/04 11:08:02 by mualkhid          #+#    #+#             */
+/*   Updated: 2024/03/08 11:48:14 by mualkhid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*join_strings(char *frst, char *secnd)
 {
 	int		i;
 	int		j;
-	char	*newstr ;
+	char	*newstr;
 
 	if (!frst)
 		frst = initialize_string();

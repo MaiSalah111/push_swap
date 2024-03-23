@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+         #
+#    By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/02/19 16:32:42 by maiahmed          #+#    #+#              #
-#    Updated: 2024/02/26 19:08:52 by maiahmed         ###   ########.fr        #
+#    Created: 2024/03/04 11:08:32 by mualkhid          #+#    #+#              #
+#    Updated: 2024/03/08 11:56:21 by mualkhid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,21 +64,21 @@ $(LIBFT):
 
 $(PRINTF):
 	make -C ft_printf
-	
+
 
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT) $(PRINTF)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(PRINTF) 
-	
-        
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT) $(PRINTF)
+
+
 bonus: $(NAME_BONUS)
 
 $(NAME_BONUS): $(OBJSB) $(LIBFT) $(PRINTF)
-	$(CC) $(CFLAGS) -o $(NAME_BONUS) $(OBJSB) $(LIBFT) $(PRINTF) 
+	$(CC) $(CFLAGS) -o $(NAME_BONUS) $(OBJSB) $(LIBFT) $(PRINTF)
 
-	
-	
+
+
 clean:
 	make clean -C libft
 	make clean -C ft_printf
@@ -89,7 +89,7 @@ fclean: clean
 	make fclean -C ft_printf
 	$(RM) $(NAME) $(NAME_BONUS)
 
-	
+
 re: fclean all
 
 .PHONY: all clean fclean re bonus

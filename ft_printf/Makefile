@@ -3,20 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+         #
+#    By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/29 16:13:24 by maiahmed          #+#    #+#              #
-#    Updated: 2024/01/22 16:55:15 by maiahmed         ###   ########.fr        #
+#    Created: 2024/03/04 11:02:17 by mualkhid          #+#    #+#              #
+#    Updated: 2024/03/04 11:02:28 by mualkhid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME = libftprintf.a
 
 SRCS	= ft_printf.c \
 	   	ft_nums.c \
 		ft_words.c \
-		
-      
+
 
 OBJS = $(SRCS:.c=.o)
 
