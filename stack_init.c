@@ -55,7 +55,7 @@ static void	append_node(t_stack **stack, int n)
 	if (!node)
 		return ;
 	node->next = NULL;
-	node->cheapest = 0; // Initialize cheapest
+	node->cheapest = 0;
 	node->nbr = n;
 	if (!(*stack))
 	{
@@ -68,6 +68,7 @@ static void	append_node(t_stack **stack, int n)
 		last_node->next = node;
 		node->prev = last_node;
 	}
+	free_stack(stack);
 }
 
 int init_stack_a(t_stack **a, char **split_av)
