@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-void	sort_three(t_stack **a)
+void	sort_3_nums(t_stack **a)
 {
 	t_stack	*biggest_node;
 
-	biggest_node = find_max(*a);
+	biggest_node = stack_max(*a);
 	if (biggest_node == *a)
 		ra(a, false);
 	else if ((*a)->next == biggest_node)
@@ -25,17 +25,17 @@ void	sort_three(t_stack **a)
 		sa(a, false);
 }
 
-void	move_b_to_a(t_stack **a, t_stack **b)
+void	push_b_to_a(t_stack **a, t_stack **b)
 {
-	prep_for_push(a, (*b)->target_node, 'a');
+	push_prep(a, (*b)->target_node, 'a');
 	pa(a, b, false);
 }
 
-void	min_on_top(t_stack **a)
+void	move_min_to_top(t_stack **a)
 {
-	while ((*a)->nbr != find_min(*a)->nbr)
+	while ((*a)->nbr != stack_min(*a)->nbr)
 	{
-		if (find_min(*a)->above_median)
+		if (stack_min(*a)->above_median)
 			ra(a, false);
 		else
 			rra(a, false);

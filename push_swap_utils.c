@@ -27,7 +27,7 @@ int	stack_len(t_stack *stack)
 	return (count);
 }
 
-t_stack	*find_last(t_stack *stack)
+t_stack	*stack_last(t_stack *stack)
 {
 	if (!stack)
 		return (NULL);
@@ -36,7 +36,7 @@ t_stack	*find_last(t_stack *stack)
 	return (stack);
 }
 
-bool	stack_sorted(t_stack *stack)
+bool	stack_is_sorted(t_stack *stack)
 {
 	if (!stack)
 		return (1);
@@ -49,7 +49,7 @@ bool	stack_sorted(t_stack *stack)
 	return (true);
 }
 
-t_stack	*find_min(t_stack *stack)
+t_stack	*stack_min(t_stack *stack)
 {
 	long	min;
 	t_stack	*min_node;
@@ -69,7 +69,7 @@ t_stack	*find_min(t_stack *stack)
 	return (min_node);
 }
 
-t_stack	*find_max(t_stack *stack)
+t_stack	*stack_max(t_stack *stack)
 {
 	long	max;
 	t_stack	*max_node;

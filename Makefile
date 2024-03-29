@@ -15,33 +15,33 @@ NAME_BONUS := checker
 
 
 SRCS := 	push_swap.c \
-			errors.c	\
-			init_a_to_b.c \
-			init_b_to_a.c \
-			push_commands.c \
-			rev_rotate_commands.c \
-			rotate_commands.c \
-			sort_stack.c \
-			sort_three.c \
+			errors_handling.c	\
+			push_a_to_b.c \
+			push_b_to_a.c \
+			push_operations.c \
+			rev_rotate_operations.c \
+			rotate_operations.c \
+			stack_sorting.c \
+			sort_3_nums.c \
 			split.c \
-			stack_init.c \
-			stack_utils.c \
-			swap_commands.c \
+			stack_prep.c \
+			push_swap_utils.c \
+			swap_operations.c \
 
 SRCSB := checker.c \
 			checker_utils.c \
-			errors.c	\
-			init_a_to_b.c \
-			init_b_to_a.c \
-			push_commands.c \
-			rev_rotate_commands.c \
-			rotate_commands.c \
-			sort_stack.c \
-			sort_three.c \
+			errors_handling.c	\
+			push_a_to_b.c \
+			push_b_to_a.c \
+			push_operations.c \
+			rev_rotate_operations.c \
+			rotate_operations.c \
+			stack_sorting.c \
+			sort_3_nums.c \
 			split.c \
-			stack_init.c \
-			stack_utils.c \
-			swap_commands.c \
+			stack_prep.c \
+			push_swap_utils.c \
+			swap_operations.c \
 			get_next_line.c \
 			get_next_line_utils.c \
 

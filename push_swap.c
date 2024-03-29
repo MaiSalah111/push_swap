@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	process_input(int ac, char **av, t_stack **a)
+void	parse_input(int ac, char **av, t_stack **a)
 {
 	char	**split_av;
 	int		i;
@@ -21,7 +21,7 @@ void	process_input(int ac, char **av, t_stack **a)
 	while (i < ac)
 	{
 		split_av = split(av[i], ' ');
-		if (init_stack_a(a, split_av) == -1)
+		if (prep_stack_a(a, split_av) == -1)
 		{
 			free_split_array(split_av);
 			continue ;
@@ -41,15 +41,15 @@ int	main(int ac, char **av)
 	if (ac == 1 || (ac == 2 && !av[1][0]))
 		return (0);
 	else
-		process_input(ac, av, &a);
-	if (!stack_sorted(a))
+		parse_input(ac, av, &a);
+	if (!stack_is_sorted(a))
 	{
 		if (stack_len(a) == 2)
 			sa(&a, false);
 		else if (stack_len(a) == 3)
-			sort_three(&a);
+			sort_3_nums(&a);
 		else
-			sort_stacks(&a, &b);
+			stacks_sorting(&a, &b);
 	}
 	free_stack(&a);
 	free_stack(&b);
