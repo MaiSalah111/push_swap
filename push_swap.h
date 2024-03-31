@@ -6,7 +6,7 @@
 /*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:08:52 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/03/23 17:07:06 by maiahmed         ###   ########.fr       */
+/*   Updated: 2024/03/31 12:31:37 by maiahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # endif
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 7
+#  define BUFFER_SIZE 10
 # endif
 
 int					lenstr(const char *str);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/04 11:05:48 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/03/04 11:05:48 by mualkhid         ###   ########.fr       */
+/*   Created: 2023/11/15 10:31:49 by maiahmed          #+#    #+#             */
+/*   Updated: 2023/11/15 10:31:49 by maiahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,9 @@ static void	ft_undoalloc(char **s, int i)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**split;
-	int		count;
-	int		i;
+	char			**split;
+	int				count;
+	int				i;
 
 	i = 0;
 	if (!s)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap_utils_2.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/31 12:28:02 by maiahmed          #+#    #+#             */
+/*   Updated: 2024/03/31 12:28:13 by maiahmed         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	set_index_median(t_stack *stack)
@@ -37,8 +49,6 @@ void	push_b_to_a(t_stack **a, t_stack **b)
 	push_prep(a, (*b)->target_node, 'a');
 	pa(a, b, false);
 }
-
-#include "push_swap.h"
 
 void	free_split_array(char **split_array)
 {

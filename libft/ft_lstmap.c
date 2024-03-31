@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mualkhid <mualkhid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/04 11:04:34 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/03/04 11:04:35 by mualkhid         ###   ########.fr       */
+/*   Created: 2023/11/15 10:55:46 by maiahmed          #+#    #+#             */
+/*   Updated: 2023/11/18 15:03:59 by maiahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	clean_up(t_list **new_list, void *content, void (*del)(void *))
 }
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{
+	{
 	t_list	*new_list;
 	t_list	*new_node;
 	void	*content;
