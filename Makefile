@@ -26,6 +26,7 @@ SRCS := 	push_swap.c \
 			split.c \
 			stack_prep.c \
 			push_swap_utils.c \
+			push_swap_utils_2.c \
 			swap_operations.c \
 
 SRCSB := checker.c \
@@ -41,6 +42,7 @@ SRCSB := checker.c \
 			split.c \
 			stack_prep.c \
 			push_swap_utils.c \
+			push_swap_utils_2.c \
 			swap_operations.c \
 			get_next_line.c \
 			get_next_line_utils.c \

@@ -10,21 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	free_split_array(char **split_array)
-{
-	int	i;
-
-	i = 0;
-	while (split_array[i] != NULL)
-	{
-		free(split_array[i]);
-		i++;
-	}
-	free(split_array);
-}
-
 static long	ft_atol(const char *s)
 {
 	long	result;

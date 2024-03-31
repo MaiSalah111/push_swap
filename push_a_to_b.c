@@ -12,27 +12,6 @@
 
 #include "push_swap.h"
 
-void	set_index_median(t_stack *stack)
-{
-	int	i;
-	int	median;
-
-	i = 0;
-	if (!stack)
-		return ;
-	median = stack_len(stack) / 2;
-	while (stack)
-	{
-		stack->index = i;
-		if (i <= median)
-			stack->above_median = true;
-		else
-			stack->above_median = false;
-		stack = stack->next;
-		++i;
-	}
-}
-
 static void	find_a_target(t_stack *a, t_stack *b)
 {
 	t_stack	*current_b;
