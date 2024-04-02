@@ -6,7 +6,7 @@
 #    By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 11:08:32 by mualkhid          #+#    #+#              #
-#    Updated: 2024/03/23 17:10:12 by maiahmed         ###   ########.fr        #
+#    Updated: 2024/04/02 10:46:34 by maiahmed         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ OBJS := $(SRCS:.c=.o)
 OBJSB := $(SRCSB:.c=.o)
 
 CC := cc
-CFLAGS := -Wall -Wextra -Werror -g3
+CFLAGS := -Wall -Wextra -Werror
 RM := rm -f
 
 LIBFT := libft/libft.a
