@@ -6,7 +6,7 @@
 /*   By: maiahmed <maiahmed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 11:08:52 by mualkhid          #+#    #+#             */
-/*   Updated: 2024/03/31 12:31:37 by maiahmed         ###   ########.fr       */
+/*   Updated: 2024/04/02 10:09:30 by maiahmed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,20 +49,20 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }					t_stack;
 
-//***Handle errors
+//***Errors Handling
 int					syntax_err(char *str_n);
 int					error_duplicate(t_stack *a, int n);
 void				free_stack(t_stack **stack);
 void				free_err(t_stack **a);
 void				ft_putendl_fd(char *s, int fd);
 
-//***Stack initiation
+//***Stack Preparation
 int					prep_stack_a(t_stack **a, char **split_av);
 char				**split(char *s, char c);
 void				free_split_array(char **split_array);
 int					ft_isdigit(int c);
 
-//***Nodes initiation
+//***Nodes Preparation
 void				prep_nodes_a(t_stack *a, t_stack *b);
 void				prep_nodes_b(t_stack *a, t_stack *b);
 void				set_index_median(t_stack *stack);
@@ -70,14 +70,14 @@ void				find_cheapest(t_stack *stack);
 t_stack				*get_cheapest(t_stack *stack);
 void				push_prep(t_stack **s, t_stack *n, char c);
 
-//***Stack utils
+//***Stack Utils
 int					stack_len(t_stack *stack);
 t_stack				*stack_last(t_stack *stack);
 bool				stack_is_sorted(t_stack *stack);
 t_stack				*stack_min(t_stack *stack);
 t_stack				*stack_max(t_stack *stack);
 
-//***Commands
+//***Operations
 void				sa(t_stack **a, bool print);
 void				sb(t_stack **b, bool print);
 void				ss(t_stack **a, t_stack **b, bool print);
